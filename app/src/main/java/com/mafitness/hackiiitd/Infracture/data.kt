@@ -7,6 +7,5 @@ data class data(
         val owner : String,
         val industryname : String,
         val phone : String,
-        val udyog : String,
-        val cluster : String
+        val udyog : String
 )
