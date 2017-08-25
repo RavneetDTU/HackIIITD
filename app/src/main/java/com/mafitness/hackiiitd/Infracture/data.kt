@@ -8,5 +8,6 @@ data class data(
         val industryname : String,
         val phone : String,
         val udyog : String,
+        val description : String,
         val cluster : String
 )
