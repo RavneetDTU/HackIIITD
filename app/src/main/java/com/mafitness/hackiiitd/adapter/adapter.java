@@ -5,11 +5,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.mafitness.hackiiitd.Infracture.data;
 import com.mafitness.hackiiitd.R;
+import com.squareup.picasso.Picasso;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -51,7 +55,9 @@ public class adapter extends RecyclerView.Adapter<adapter.adapterviewholder> {
 
         data thisdata = dataList.get(position);
 
-        holder
+        holder.companyname.setText(thisdata.getIndustryname());
+        holder.city.setText(thisdata.getLocation());
+        Picasso.with(context).load(thisdata.getLogourl()).fit().centerCrop().into(holder.iv_logo);
 
     }
 
@@ -63,10 +69,17 @@ public class adapter extends RecyclerView.Adapter<adapter.adapterviewholder> {
 
     class adapterviewholder extends RecyclerView.ViewHolder{
 
-        TextView
+        TextView companyname,city;
+        ImageView iv_logo;
+        View thisview;
 
         public adapterviewholder(View itemView) {
             super(itemView);
+            companyname = (TextView) itemView.findViewById(R.id.tv_CompanyName);
+            city = (TextView) itemView.findViewById(R.id.tv_city);
+            iv_logo = (ImageView) itemView.findViewById(R.id.iv_logo);
+
+            thisview = itemView;
         }
     }
 
