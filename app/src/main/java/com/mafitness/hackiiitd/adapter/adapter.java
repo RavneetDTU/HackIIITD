@@ -2,11 +2,14 @@ package com.mafitness.hackiiitd.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.mafitness.hackiiitd.Infracture.data;
+import com.mafitness.hackiiitd.R;
 
 import java.util.ArrayList;
 
@@ -37,11 +40,18 @@ public class adapter extends RecyclerView.Adapter<adapter.adapterviewholder> {
 
     @Override
     public adapterviewholder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        LayoutInflater li = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View thisview = li.inflate(R.layout.listiem,parent,false);
+
+        return new adapterviewholder(thisview);
     }
 
     @Override
     public void onBindViewHolder(adapterviewholder holder, int position) {
+
+        data thisdata = dataList.get(position);
+
+        holder
 
     }
 
@@ -52,6 +62,8 @@ public class adapter extends RecyclerView.Adapter<adapter.adapterviewholder> {
 
 
     class adapterviewholder extends RecyclerView.ViewHolder{
+
+        TextView
 
         public adapterviewholder(View itemView) {
             super(itemView);
