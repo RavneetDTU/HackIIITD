@@ -2,10 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.mafitness.hackiiitd">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -22,7 +21,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".UploadActivity" />
-        <activity android:name=".DetailsActivity"></activity>
+        <activity android:name=".DetailsActivity" />
+        <activity android:name=".MarketActivity" />
+        <activity
+            android:name=".MarketActivity2"
+            android:label="@string/title_activity_market2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
