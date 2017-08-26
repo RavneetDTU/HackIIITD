@@ -83,7 +83,7 @@ public class adapter extends RecyclerView.Adapter<adapter.adapterviewholder> {
 
         public adapterviewholder(View itemView) {
             super(itemView);
-            companyname = (TextView) itemView.findViewById(R.id.tv_CompanyName);
+            companyname = (TextView) itemView.findViewById(R.id.tv_industrryname);
             city = (TextView) itemView.findViewById(R.id.tv_city);
             iv_logo = (ImageView) itemView.findViewById(R.id.iv_logo);
 

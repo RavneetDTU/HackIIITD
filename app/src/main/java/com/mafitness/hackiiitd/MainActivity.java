@@ -21,6 +21,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.mafitness.hackiiitd.Infracture.data;
 import com.mafitness.hackiiitd.adapter.adapter;
@@ -31,6 +33,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private FirebaseAuth firebaseAuth;
+    private DatabaseReference databaseReference;
     private adapter adapter1;
     private FirebaseAuth.AuthStateListener authStateListener;
     public static final int RC_SIGN_IN = 1;
@@ -44,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         data.child("industryname").getValue().toString(),
                         data.child("phone").getValue().toString(),
                         data.child("udyog").getValue().toString(),
-                        data.child("decription").getValue().toString(),
+                        data.child("description").getValue().toString(),
                         data.child("cluster").getValue().toString(),
                         data.child("logourl").getValue().toString(),
                         data.child("email").getValue().toString(),
@@ -75,18 +78,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Uploadeddata");
+        databaseReference.addValueEventListener(valueEventListener);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setItemIconTintList(null);
         navigationView.setNavigationItemSelectedListener(this);
-
-        FloatingActionButton FAB = (FloatingActionButton) findViewById(R.id.fab);
-        FAB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,UploadActivity.class));
-            }
-        });
 
         recyclerView = (RecyclerView) findViewById(R.id.rv_main);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -95,6 +92,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         recyclerView.setAdapter(adapter1);
 
         firebaseAuth = FirebaseAuth.getInstance();
+
 
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -145,6 +143,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                             new AuthUI.IdpConfig.Builder(AuthUI.GOOGLE_PROVIDER).build()))
                             .build(),
                     RC_SIGN_IN);
+        }
+        else if(id == R.id.nav_market){
+            startActivity(new Intent(MainActivity.this,MarketActivity2.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
