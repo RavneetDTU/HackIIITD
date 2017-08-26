@@ -5,5 +5,5 @@ package com.mafitness.hackiiitd.adapter;
  */
 
 public interface OnItemClickListner {
-    void OnItemClick(String compalyname);
+    void OnItemClick(String compalyname,String ownername,String decription);
 }

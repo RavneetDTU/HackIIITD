@@ -53,17 +53,25 @@ public class adapter extends RecyclerView.Adapter<adapter.adapterviewholder> {
     @Override
     public void onBindViewHolder(adapterviewholder holder, int position) {
 
-        data thisdata = dataList.get(position);
+        final data thisdata = dataList.get(position);
 
         holder.companyname.setText(thisdata.getIndustryname());
         holder.city.setText(thisdata.getLocation());
         Picasso.with(context).load(thisdata.getLogourl()).fit().centerCrop().into(holder.iv_logo);
+        holder.thisview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(onItemClickListner != null){
+                    onItemClickListner.OnItemClick(thisdata.getIndustryname(),thisdata.getOwner(),thisdata.getDescription());
+                }
+            }
+        });
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return dataList.size();
     }
 
 
