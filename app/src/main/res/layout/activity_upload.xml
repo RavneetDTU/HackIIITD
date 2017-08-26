@@ -1,49 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+
+<ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.mafitness.hackiiitd.UploadActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".UploadActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:layout_height="wrap_content">
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_UA_industryName"
+            android:hint="Industry Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/et_UA_PhoneNum"
+            android:hint="Phone no."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_UA_UdyogAdharNum"
+            android:hint="Udyog Adhaar Number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:hint="Cluster Name"
+            android:id="@+id/et_UA_ClusterName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <EditText
+            android:hint="Email"
+            android:id="@+id/et_UA_email"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"  />
+        <EditText
+            android:hint="City"
+            android:id="@+id/et_UA_city"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"  />
+
+        <EditText
+            android:hint="Description"
+            android:gravity="top"
+            android:id="@+id/et_UA_Description"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            />
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_CompanyName"
-            android:gravity="center"
-            android:textSize="24dp"
-            style="@style/TextAppearance.AppCompat.Title"
-            android:textColor="#fa6b6b"
-            android:text="Company Name"/>
+            android:textSize="17sp"
+            android:text="Click below to add image:"
+            />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/tv_CompanyownerName"
-            android:gravity="right"
-            style="@style/TextAppearance.AppCompat.Title"
-            android:textSize="21dp"
-            android:text="Company Owner Name"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Description"
-            android:textSize="17dp"
-            android:id="@+id/tv_description"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/iv_indimage"
+            android:layout_gravity="center"
+            android:src="@drawable/edyog_icon_small" />
+
         <Button
-            android:layout_width="match_parent"
+            android:layout_marginLeft="140dp"
+            android:id="@+id/bt_UA_UploadDetails"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Connect"
-            android:id="@+id/btn_connect"/>
-
-
+            android:hint="Upload"
+            />
 
     </LinearLayout>
-
 </ScrollView>
