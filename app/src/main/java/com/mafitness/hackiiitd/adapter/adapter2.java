@@ -48,12 +48,20 @@ public class adapter2 extends RecyclerView.Adapter<adapter2.adapter2ViewHolder> 
 
     @Override
     public void onBindViewHolder(adapter2ViewHolder holder, int position) {
-        marketdata thisdata = dataList.get(position);
+        final marketdata thisdata = dataList.get(position);
 
         holder.tvDetails.setText(thisdata.getDetails());
         holder.tvCity.setText(thisdata.getCity());
         holder.tvPhoneNum.setText(thisdata.getPhonenum());
         holder.tvIndName.setText(thisdata.getIndustryname());
+        holder.thisView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(onItemClickListner != null){
+                    onItemClickListner.OnItemClick(thisdata.getIndustryname(), thisdata.getPhonenum() ,thisdata.getDetails());
+                }
+            }
+        });
     }
 
     @Override
@@ -64,9 +72,11 @@ public class adapter2 extends RecyclerView.Adapter<adapter2.adapter2ViewHolder> 
     class adapter2ViewHolder extends RecyclerView.ViewHolder{
 
         TextView tvIndName, tvPhoneNum, tvCity, tvDetails;
+        View thisView;
 
         public adapter2ViewHolder(View itemView) {
             super(itemView);
+            thisView = itemView;
             tvCity = itemView.findViewById(R.id.tv_MA2_city);
             tvIndName = itemView.findViewById(R.id.tv_MA2_indName);
             tvPhoneNum = itemView.findViewById(R.id.tv_MA2_phonenum);
