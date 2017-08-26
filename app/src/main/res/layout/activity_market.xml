@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".UploadActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginLeft="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="PURCHASE FROM THIS INDUSTRY"
+            android:textStyle="bold"
+            android:textSize="19sp"
+            />
+
+
+        <EditText
+            android:id="@+id/et_MA_industryName"
+            android:hint="Industry Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/et_MA_PhoneNum"
+            android:hint="Phone no."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_MA_UdyogAdharNum"
+            android:hint="Udyog Adhaar Number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <EditText
+            android:hint="Email"
+            android:id="@+id/et_MA_email"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"  />
+
+        <EditText
+            android:hint="City"
+            android:id="@+id/et_MA_city"
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"  />
+
+        <EditText
+            android:id="@+id/et_MA_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Purchasing Details"
+            />
+
+        <Button
+            android:layout_marginLeft="140dp"
+            android:id="@+id/bt_UA_OrderPlace"
+            android:layout_marginTop="25dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Place Order"
+            />
+
+    </LinearLayout>
+</ScrollView>
