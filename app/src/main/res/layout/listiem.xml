@@ -19,7 +19,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_notification_heading"
+                android:id="@+id/tv_industrryname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
@@ -33,15 +33,15 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_notification_date"
-                android:text="Date"
+                android:id="@+id/tv_city"
+                android:text="City"
                 android:paddingLeft="5sp"
                 android:textSize="12sp"
                 android:layout_marginLeft="5sp" />
 
 
             <ImageView
-                android:id="@+id/iv_notification"
+                android:id="@+id/iv_logo"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:scaleType="fitXY"

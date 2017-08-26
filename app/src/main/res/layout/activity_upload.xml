@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
->
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".UploadActivity"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
 
     <LinearLayout
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:orientation="vertical"
-        tools:context="com.mafitness.hackiiitd.UploadActivity">
+        android:orientation="vertical">
 
         <EditText
             android:id="@+id/et_UA_industryName"
             android:hint="Industry Name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content"/>
 
         <EditText
             android:id="@+id/et_UA_PhoneNum"
@@ -47,14 +43,13 @@
             android:id="@+id/et_UA_email"
             android:inputType="textEmailAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content"  />
         <EditText
             android:hint="City"
             android:id="@+id/et_UA_city"
+            android:inputType="textEmailAddress"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="wrap_content"  />
 
         <EditText
             android:hint="Description"
@@ -76,15 +71,14 @@
             android:layout_height="match_parent"
             android:id="@+id/iv_indimage"
             android:layout_gravity="center"
-            android:src="@drawable/edyog_icon_small"
-            />
+            android:src="@drawable/edyog_icon_small" />
 
         <Button
+            android:layout_marginLeft="140dp"
             android:id="@+id/bt_UA_UploadDetails"
-            android:layout_marginLeft="150dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter"
+            android:hint="Upload"
             />
 
     </LinearLayout>
